@@ -2,7 +2,7 @@
   "name": "vsc-go-to-partial",
   "displayName": "Go To Partial",
   "description": "Go to Definition support for Razor partial view references in .cshtml files.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "skttl",
   "private": true,
   "license": "MIT",
