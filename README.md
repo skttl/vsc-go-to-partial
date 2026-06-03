@@ -18,11 +18,14 @@ A VS Code extension that adds **Go to Definition** (F12 / Ctrl+Click) support fo
 
 ### From the VS Code Marketplace
 
-> _Coming soon — marketplace publishing is planned for a future release._
+Search for **Go To Partial** in the VS Code Extensions panel, or install directly:
+
+- [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=skttl.vsc-go-to-partial)
+- [Open VSX Registry](https://open-vsx.org/extension/skttl/vsc-go-to-partial)
 
 ### From a `.vsix` file
 
-1. Download the latest `.vsix` from the [GitHub Releases](../../releases) page
+1. Download the latest `.vsix` from the [GitHub Releases](https://github.com/skttl/vsc-go-to-partial/releases) page
 2. In VS Code, open the Command Palette (`Ctrl+Shift+P`) → **Extensions: Install from VSIX...**
 3. Select the downloaded file
 
