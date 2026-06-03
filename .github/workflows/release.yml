@@ -41,9 +41,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          OUTPUT=$(npx semantic-release 2>&1)
-          echo "$OUTPUT"
-          if echo "$OUTPUT" | grep -q "Published release"; then
+          TAG_BEFORE=$(git describe --tags --abbrev=0 2>/dev/null || echo "none")
+          npx semantic-release
+          TAG_AFTER=$(git describe --tags --abbrev=0 2>/dev/null || echo "none")
+          if [ "$TAG_AFTER" != "$TAG_BEFORE" ] && [ "$TAG_AFTER" != "none" ]; then
             echo "new_release_published=true" >> $GITHUB_OUTPUT
           else
             echo "new_release_published=false" >> $GITHUB_OUTPUT
