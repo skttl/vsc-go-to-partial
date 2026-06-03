@@ -1,0 +1,77 @@
+{
+  "name": "vsc-go-to-partial",
+  "displayName": "Go To Partial",
+  "description": "Go to Definition support for Razor partial view references in .cshtml files.",
+  "version": "0.0.0",
+  "publisher": "skttl",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skttl/vsc-go-to-partial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skttl/vsc-go-to-partial/issues"
+  },
+  "homepage": "https://github.com/skttl/vsc-go-to-partial#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "razor",
+    "cshtml",
+    "partial",
+    "aspnet",
+    "go to definition"
+  ],
+  "activationEvents": [
+    "onLanguage:razor",
+    "onLanguage:aspnetcorerazor"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Go To Partial",
+      "properties": {
+        "goToPartial.additionalTagHelperAttributes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "markdownDescription": "Extra HTML attribute names (from custom tag helpers) whose values should be treated as partial view names. See [configuration docs](https://github.com/skttl/vsc-go-to-partial/blob/main/docs/configuration.md) for examples."
+        },
+        "goToPartial.additionalPartialTagNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "markdownDescription": "Extra HTML element names (custom tag helpers) that use a `name` attribute to reference a partial view, e.g. `[\"ec-partial\", \"my-partial\"]`. See [configuration docs](https://github.com/skttl/vsc-go-to-partial/blob/main/docs/configuration.md) for examples."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/npm": "^12.0.0",
+    "@semantic-release/release-notes-generator": "^14.0.0",
+    "semantic-release": "^24.0.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^3.0.0"
+  }
+}
